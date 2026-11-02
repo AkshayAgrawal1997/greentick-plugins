@@ -1,0 +1,21 @@
+{
+  "name": "greentick",
+  "description": "GreenTick plugins for Claude.",
+  "owner": {
+    "name": "GreenTick",
+    "email": "hello@greentick.ai",
+    "url": "https://greentick.ai"
+  },
+  "plugins": [
+    {
+      "name": "greentick",
+      "source": "./claude",
+      "description": "Send and manage WhatsApp messages, templates, broadcasts, and automations from a conversation.",
+      "version": "1.0.0",
+      "author": {
+        "name": "GreenTick",
+        "url": "https://greentick.ai"
+      }
+    }
+  ]
+}
