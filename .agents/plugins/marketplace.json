@@ -1,0 +1,20 @@
+{
+  "name": "greentick",
+  "interface": {
+    "displayName": "GreenTick"
+  },
+  "plugins": [
+    {
+      "name": "greentick",
+      "source": {
+        "source": "local",
+        "path": "./chatgpt"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Communication"
+    }
+  ]
+}

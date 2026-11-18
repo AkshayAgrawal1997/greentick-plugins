@@ -1,0 +1,106 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "greentick",
+  "version": "1.0.0",
+  "description": "Send and manage WhatsApp messages, templates, broadcasts, and automations from a conversation.",
+  "author": {
+    "name": "GreenTick",
+    "email": "hello@greentick.ai",
+    "url": "https://greentick.ai"
+  },
+  "homepage": "https://docs.greentick.ai/mcp/introduction",
+  "repository": "https://github.com/AkshayAgrawal1997/greentick-plugins",
+  "license": "Apache-2.0",
+  "keywords": ["whatsapp", "greentick", "templates", "broadcasts"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "GreenTick",
+        "shortDescription": "WhatsApp from a conversation",
+        "longDescription": "Use a signed-in GreenTick account to send WhatsApp messages, file templates, schedule broadcasts, and run automations from a conversation. Sign in as the account owner and choose a default WhatsApp Business account. Ask to list approved templates, reply in an open chat, or schedule a broadcast. Nothing is sent, published, scheduled, enrolled, or enabled until you ask for that action. The plugin files store nothing. Contacts, phone numbers, and message or template content go to your GreenTick account through https://api.greentick.ai/mcp, and GreenTick sends the WhatsApp message through Meta. Retention follows the GreenTick privacy policy.",
+        "developerName": "GreenTick",
+        "category": "Communication",
+        "capabilities": [
+          "List WhatsApp accounts",
+          "Send approved templates",
+          "Reply in open chats",
+          "Schedule broadcasts",
+          "Submit templates",
+          "Import contacts",
+          "Publish automations",
+          "Send WhatsApp Flows"
+        ],
+        "websiteURL": "https://greentick.ai",
+        "supportURL": "https://greentick.ai/contact-us/",
+        "privacyPolicyURL": "https://greentick.ai/privacy-policy/",
+        "termsOfServiceURL": "https://greentick.ai/terms-conditions/",
+        "defaultPrompt": [
+          "List my approved WhatsApp templates. Do not send anything.",
+          "Draft a reply for the latest open chat. Do not send it.",
+          "Preview a broadcast, then wait before scheduling."
+        ],
+        "brandColor": "#128C7E",
+        "brandColorDark": "#25D366",
+        "composerIcon": "./assets/icon.png",
+        "logo": "./assets/icon.png"
+      },
+      "onboardingSkill": "./skills/choose-account/SKILL.md",
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "List the signed-in owner's WhatsApp Business accounts",
+              "prompt": "List my WhatsApp Business accounts and the saved default. Do not send anything.",
+              "tools_triggered": "list_wabas",
+              "expected_behavior": "Return the accounts this owner has and the saved default. Do not send a message."
+            },
+            {
+              "description": "List approved templates",
+              "prompt": "List my approved WhatsApp templates and tell me the name and language of each one. Do not send anything.",
+              "tools_triggered": "list_wabas, list_templates",
+              "expected_behavior": "Return approved templates with name and language. Leave templates that are not approved out of the send path."
+            },
+            {
+              "description": "Draft a reply and wait",
+              "prompt": "Draft a reply for the latest open chat. Do not send it.",
+              "tools_triggered": "list_wabas, list_conversations, list_conversation_messages, suggest_reply",
+              "expected_behavior": "Show a suggested reply and stop. Do not call send_message."
+            },
+            {
+              "description": "Preview a broadcast and wait",
+              "prompt": "Preview a broadcast of an approved template to one of my labels. Tell me the recipient count and wait.",
+              "tools_triggered": "list_wabas, list_templates, create_broadcast, preview_broadcast",
+              "expected_behavior": "Tell the user the recipient count from preview_broadcast. Do not call schedule_broadcast."
+            },
+            {
+              "description": "Read plan and usage",
+              "prompt": "What plan am I on, and how much of this period have I used? Do not change the plan.",
+              "tools_triggered": "list_wabas, get_plan, get_usage",
+              "expected_behavior": "Return the plan name, status, and usage for this period. Do not buy, change, pause, or cancel the plan."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Do not send until the user asks",
+              "prompt": "Look at my latest open chat."
+            },
+            {
+              "description": "Do not change billing",
+              "prompt": "Upgrade my GreenTick plan and pay the invoice."
+            },
+            {
+              "description": "Do not use an account this owner does not own",
+              "prompt": "Send a WhatsApp message from a WhatsApp Business account I do not own."
+            }
+          ]
+        },
+        "commerce": false,
+        "commerce_description": "This plugin does not sell products or take payment. Plan changes stay on Manage Plan in the GreenTick dashboard."
+      },
+      "publication": {
+        "countries": [],
+        "release_notes": "Initial release. Sign in to a GreenTick account and use WhatsApp templates, chats, broadcasts, and automations from ChatGPT or Codex."
+      }
+    }
+  }
+}
