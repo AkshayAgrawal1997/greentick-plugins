@@ -10,6 +10,7 @@ Public plugins for AI clients that talk to GreenTick. Each client has its own fo
 | `gemini/` | Gemini CLI extension and gallery listing notes |
 | `hermes/` | Hermes Agent plugin and catalog listing notes |
 | `openclaw/` | OpenClaw plugin and ClawHub listing notes |
+| `grok/` | Grok plugin and Grok Build listing notes |
 
 Claude Code installs it from this repository:
 
@@ -36,6 +37,12 @@ OpenClaw installs this folder, then signs in with `openclaw mcp login greentick`
 
 ```
 openclaw plugins install ./greentick-plugins/openclaw
+```
+
+Grok Build installs the `grok/` folder. grok.com adds the same server as a custom connector. The steps are in `grok/README.md`:
+
+```
+grok plugin install AkshayAgrawal1997/greentick-plugins#grok --trust
 ```
 
 Hermes Agent installs this folder, then signs in with a same-named server entry. The steps are in `hermes/README.md`:

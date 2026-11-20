@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "greentick": {
+      "type": "http",
+      "url": "https://api.greentick.ai/mcp",
+      "oauth": {
+        "clientId": "https://api.greentick.ai/.well-known/grok-client.json",
+        "scopes": ["mcp", "offline_access"]
+      }
+    }
+  }
+}
