@@ -1,0 +1,20 @@
+{
+  "name": "greentick",
+  "version": "1.0.0",
+  "description": "Send and manage WhatsApp messages, templates, broadcasts, and automations from a conversation.",
+  "contextFileName": "GEMINI.md",
+  "mcpServers": {
+    "greentick": {
+      "httpUrl": "https://api.greentick.ai/mcp",
+      "oauth": {
+        "enabled": true,
+        "clientId": "https://api.greentick.ai/.well-known/gemini-cli-client.json",
+        "issuer": "https://api.greentick.ai",
+        "authorizationUrl": "https://api.greentick.ai/oauth/authorize",
+        "tokenUrl": "https://api.greentick.ai/oauth/token",
+        "scopes": ["mcp", "offline_access"],
+        "redirectUri": "http://localhost:7777/oauth/callback"
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "greentick": {
+      "type": "http",
+      "url": "https://api.greentick.ai/mcp",
+      "auth": {
+        "CLIENT_ID": "https://cursor.com/oauth/mcp-client.json",
+        "scopes": ["mcp", "offline_access"]
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "url": "https://api.greentick.ai/mcp",
+  "transport": "streamable-http",
+  "auth": "oauth",
+  "oauth": {
+    "scope": "mcp offline_access",
+    "clientMetadataUrl": "https://api.greentick.ai/.well-known/openclaw-client.json"
+  }
+}

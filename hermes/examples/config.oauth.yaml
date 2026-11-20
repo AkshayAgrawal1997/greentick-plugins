@@ -1,0 +1,11 @@
+# Add this block to ~/.hermes/config.yaml, then run: hermes mcp login greentick
+# A same-named entry replaces the copy shipped in mcp.json, which cannot declare OAuth.
+# Keep the name greentick. Hermes stores and refreshes the tokens.
+mcp_servers:
+  greentick:
+    url: "https://backend.greentick.ai/mcp"
+    auth: oauth
+    timeout: 120
+    # Reads run immediately. A tool without readOnlyHint (send, publish, schedule,
+    # enroll, enable, delete) asks before it runs, including on cron.
+    trust: untrusted

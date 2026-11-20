@@ -1,0 +1,27 @@
+{
+  "name": "greentick",
+  "owner": {
+    "name": "GreenTick",
+    "email": "hello@greentick.ai"
+  },
+  "metadata": {
+    "description": "GreenTick plugins for Cursor."
+  },
+  "plugins": [
+    {
+      "name": "greentick",
+      "source": "cursor",
+      "description": "Send and manage WhatsApp messages, templates, broadcasts, and automations from a conversation.",
+      "version": "1.0.0",
+      "author": {
+        "name": "GreenTick",
+        "email": "hello@greentick.ai"
+      },
+      "homepage": "https://docs.greentick.ai/mcp/introduction",
+      "repository": "https://github.com/AkshayAgrawal1997/greentick-plugins",
+      "license": "Apache-2.0",
+      "keywords": ["whatsapp", "greentick", "templates", "broadcasts"],
+      "category": "communication"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "greentick",
+  "displayName": "GreenTick",
+  "version": "1.0.0",
+  "description": "Send and manage WhatsApp messages, templates, broadcasts, and automations from a conversation.",
+  "author": {
+    "name": "GreenTick",
+    "email": "hello@greentick.ai"
+  },
+  "homepage": "https://docs.greentick.ai/mcp/introduction",
+  "repository": "https://github.com/AkshayAgrawal1997/greentick-plugins",
+  "license": "Apache-2.0",
+  "logo": "assets/logo.png",
+  "keywords": ["whatsapp", "greentick", "templates", "broadcasts", "mcp"],
+  "category": "communication",
+  "tags": ["whatsapp", "greentick", "mcp"],
+  "skills": "./skills/",
+  "mcpServers": "./mcp.json"
+}
